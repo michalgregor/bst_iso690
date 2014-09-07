@@ -630,7 +630,7 @@ FUNCTION {format.url}
 { url empty$
     { "" }
     {   
-        ". \urlprefix\url{" * url * "}\urlsuffix"
+        "\urlprefix\url{" url * "}\urlsuffix" *
         urldate empty$
          { "there is url but no urldate in " cite$ * warning$
 		   "." * %if there is no (cited ...), we add a . separator here
@@ -1246,6 +1246,7 @@ FUNCTION {misc}
   format.howpublished output %bibinfo.check output
   format.date output
   format.doi output
+  new.block
   format.url output
   new.block
   format.note output
